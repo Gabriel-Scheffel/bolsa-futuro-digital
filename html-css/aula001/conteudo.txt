@@ -1,0 +1,15 @@
+Aula 1
+
+O que é programação? O que é um código?
+Programação: escrever uma série de instruções, através do código, para que o computador realize uma tarefa.
+Linguagem de programação: traduz os comandos para que o computador entenda as instruções.
+
+Desenvolvedor Web
+Front-End: É a interface visual com a qual o usuário interage diretamente no navegador. Envolve tudo o que a pessoa vê e clica: botões, menus, formulários, animações e o layout das páginas.
+Back-End: É o "motor" invisível da aplicação. Ele processa as regras de negócio, gerencia o banco de dados, garante a segurança e lida com a autenticação de usuários.
+Full-Stack: Faz tudo.
+
+HTML, CSS e JavaScript
+HTML: HyperText Markup Language (Linguagem de Marcação de Hipertexto). É o esqueleto de um site. Ele é uma linguagem que estrutura e organiza o que vai aparecer na tela. 
+CSS: Cascading Style Sheets (Folhas de Estilo em Cascata). Ele é a linguagem responsável por toda a parte visual e estética do site. 
+JavaScript: Adiciona a parte interativa, faz o site funcionar. Podemos criar menus, abrir telas, carrosséis de imagens, etc.
