@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body {
+    background-color: bisque;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+header {
+    background-color: black;
+    color: bisque;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    width: 300px;
+    margin: auto;
+}
+
+main {
+    background-color: rgba(93, 0, 0, 0.534);
+    text-align: justify;
+    margin: 10px;
+    padding: 5px 50px 5px 50px;
+    border-radius: 20px;
+}
