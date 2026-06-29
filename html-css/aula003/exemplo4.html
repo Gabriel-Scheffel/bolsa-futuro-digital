@@ -5,18 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vídeos em HTML</title>
     <style>
+        body {
+            background-color: rgb(105, 105, 105);
+            color: white;
+        }
+
         video {
-            width: 800px;
+            width: 900px;
+            /* Trava o tamanho da caixa num formato fixo  */
+            aspect-ratio: 16/9;
+            /* Faz a capa preencher toda a caixa do vídeo */
+            object-fit: cover;
             display: block;
             margin: auto;
         }
+        
     </style>
 </head>
 <body>
     <h1>Adicionando Vídeos</h1>
-    <video controls poster="imagens/poa-pequeno.jpg">  
-       <source src="videos/video.mp4" type="video/mp4">
+
+    <video controls poster="imagens/poa-pequeno.jpg">
+        <!-- controls: habilita os controles, play, volume -->
+        <!-- poster: adiciona uma imagem de capa no vídeo  -->
+        <!-- O navegador tenta o primeiro formato -->
+        <source src="videos/video.webm" type="video/webm">
+        <!-- Se o primeiro não abrir ele tenta outro -->
+        <source src="videos/video.mp4" type="video/mp4">
+        <!-- Se o segundo não abrir ele tenta outro  -->
+        <source src="videos/video.ogg" type="video/ogg">
+        <!-- Se nenhum funcionar ele exibe a mensagem -->
        Seu navegador não é compatível.
     </video>
+
 </body>
 </html>
