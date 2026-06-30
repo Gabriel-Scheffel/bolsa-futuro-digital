@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo do Youtube</title>
+    <style>
+
+        div#youtube {
+            background-color: red;
+            width: 80vw;
+            height: 600px;
+            margin: 50px;
+            display: block;
+            margin: auto;
+        }
+
+        div#youtube > iframe {
+            width: 90%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+
+        div#interno > video {
+            width: 90%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Adicionando vídeos externos</h1>
+
+    <div id="youtube">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cZHp-Oozg6I?si=WNCFlso41USFAukV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div id="interno">
+        <video controls poster="imagens/poa-pequeno.jpg">
+            <source src="videos/video.mp4" type="video/mp4">
+            Seu navegador não é compatível.
+        </video>
+    </div>
+
+</body>
+</html>
