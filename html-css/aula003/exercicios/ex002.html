@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <style>
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+    div {
+        border: 2px solid black;
+        padding: 10px;
+        width: 900px;
+        display: block;
+        margin: 10px auto;
+    }
+
+    div > img {
+        display: block;
+        margin: auto;
+    }
+
+    img.pequena {
+        max-width: 50%;
+        border: 8px solid red;
+    }
+
+    img.media {  
+        max-width: 80%;
+        border: 8px solid blue;
+    }
+    </style>
+</head>
+<body>
+    <h1>Imagens de Diferentes tamanhos</h1>
+
+    <div id="foto-pequena">
+        <h2>Imagem pequena</h2>
+        <img class="pequena" src="../imagens/poa-pequeno.jpg" alt="foto de poa">
+    </div>
+
+    <div id="foto-media">
+        <h2>Imagem media</h2>
+        <img class="media" src="../imagens/poa-medio.jpg" alt="foto de poa">
+    </div>
+
+</body>
+</html>

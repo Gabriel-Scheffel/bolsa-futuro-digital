@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(218, 218, 218);
+}
+
+header {
+    background-color: rgb(99, 180, 255);
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.8em;
+    width: 500px;
+    display: block;
+    margin: 5px auto;
+}
+
+main {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 700px;
+    display: block;
+    margin: auto;
+}
+
+section {
+    padding: 15px;
+}
+
+section#revisao {
+    background-color: black;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section#exercicios {
+    background-color: yellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section > p {
+    text-align: justify;
+    font-size: 1.3em;
+    padding: 3px;
+}
+
+
