@@ -11,8 +11,35 @@
 
 
 body {
-    font-size: 1.7em;
     text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+    text-decoration: underline;
+
+    /*
+    Medidas Absolutas
+    cm, mm, in, px, pt, pc
+
+    Medidas Relativas
+    em, ex, rem, vw, vh, %
+    16px geralmente = 1em
+
+    weight: lighter normal bold bolder
+    weight numerado: 100 - 900
+    */
+}
+
+h1 {
+
+    /*
+
+    shorthand font
+    - font-style -> font-weight -> font-size -> font-family          */
+    
+    font: italic bolder 3em 'Work Sans', sans-serif;
+
 }
 
 p#serif {
