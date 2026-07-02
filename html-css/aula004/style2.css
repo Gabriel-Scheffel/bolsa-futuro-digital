@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* Cinzel: serif */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+/* Bebas Neue: sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Fira Code: monoespaçada */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+
+body {
+    font-size: 1.7em;
+    text-align: justify;
+}
+
+p#serif {
+    font-family: "Cinzel", serif;
+}
+
+p#sans-serif {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+p#mono {
+    font-family: "Fira Code", monospace;
+}
+
+
+
