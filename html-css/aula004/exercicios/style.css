@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+:root {
+    /* CORES */
+    --verde: #00923F;
+    --vermelho: #DA251D;
+    --amarelo: #FFF500;
+    --marron: #C0A062;
+
+    /* Fontes */
+    --titulo: "Rye", serif;
+    --texto: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-image: url(../imagens/wallpaper001.jpg);
+}
+
+header {
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    /* Tamanho e centralizar */
+    width: 600px;
+    height: 300px;
+    display: block;
+    margin: auto;
+    background-image: linear-gradient(-45deg, var(--amarelo), var(--vermelho), var(--verde));
+}
+
+header > div#h-text {
+    padding: 50px;
+    font-size: 1.2em;
+}
+
+h1 {
+    font-family: var(--titulo);
+    font-weight: lighter;
+    font-size: 3em;
+}
+
+header > div > p {
+    font-weight: bolder;
+}
+
+main {
+    border-radius: 7px;
+    padding: 10px;
+    text-align: justify;
+
+    display: block;
+    margin: 10px auto;
+    width: 90vw;
+
+    background-color: rgba(211, 211, 211, 0.603);
+}
+
+main h2 {
+    font-family: var(--titulo);
+    font-weight: lighter;
+    font-size: 1.8em;
+}
+
+main p {
+    font-family: var(--texto);
+    font-size: 1.4em;
+}
+
+main > section > div.img > img {
+    display: block;
+    margin: auto;
+    width: 700px;
+    height: 300px;
+    border: 6px solid var(--vermelho);
+    border-radius: 5px;
+}
+
+img#mapa {
+    width: 300px;
+    height: auto;
+}
+
+
+footer {
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #C0A062;
+}

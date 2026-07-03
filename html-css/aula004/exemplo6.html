@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis</title>
+    <style>
+        /*
+        Coffe Bean: #1C0F13
+        Slate Gray: #6E7E85
+        Ash Grey: #B7CECE
+        Pale Slate: #BBBAC6
+        Alabaster Grey: #E2E2E2
+        */
+
+        :root {
+            --cor01: #1C0F13;
+            --cor02: #6E7E85;
+            --cor03: #B7CECE;
+            --cor04: #BBBAC6;
+            --cor05: #E2E2E2; 
+        }
+
+        body {
+            background-color: var(--cor04);
+        }
+
+        header {
+            border: 1px solid black;
+            border-radius: 10px;
+            font-size: 2em;
+            text-align: center;
+            width: 700px;
+            display: block;
+            margin: auto;
+            /* Cores */
+            background-color: var(--cor02);
+            color: var(--cor05)
+        }
+
+        main {
+            border: 1px solid black;
+            border-radius: 10px;
+            font-size: 1.2em;
+            text-align: justify;
+            width: 900px;
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            /* Cores */
+            background-color: var(--cor01);
+            
+        }
+
+        section {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            /* Cores */
+            background-color: var(--cor02)
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+        <p>Bem Vindo ao meu site de Notícias!</p>
+    </header>
+    <main>
+        <section>
+            <h2>Notícias</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum labore iusto suscipit deserunt vel veritatis quos eos ut laboriosam, dolor exercitationem unde, aut, officiis magnam itaque eligendi fugit consequuntur eius. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis consequuntur sed possimus veritatis ratione maiores vitae accusantium, ullam at quod! Fugit, qui officiis? Dolores odio, eveniet recusandae dolor nobis illum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis incidunt ut minus sequi. Dolores, quidem. Vero, maxime, accusamus culpa nihil doloremque officia corporis obcaecati consectetur rerum, aut illo perspiciatis aperiam.</p>
+        </section>
+
+        <section>
+            <h2>Esportes</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, cum exercitationem sunt reprehenderit ea odio eligendi cumque alias repudiandae quasi fuga deserunt quod modi velit dolore quam nobis beatae deleniti?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dicta consequatur quia provident, amet aliquam quidem facilis incidunt optio repellat sint quaerat quisquam, odio illum vel voluptatem necessitatibus, dolorem nulla.</p>
+        </section>
+    </main>
+</body>
+</html>

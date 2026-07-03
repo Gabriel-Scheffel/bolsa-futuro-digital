@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paleta de Cores</title>
     <style>
+        
         /*
         Cinza: #757780
         Sage: #D2CCA1
@@ -12,9 +13,39 @@
         Dust Grey: #DBD4D3
         Melancia: #E83151
         */
-        body {
-            background-color: #DBD4D3;
+
+        :root {
+            /* CORES DO SITE */
+            --cor-fundo: #387780;
+            --cor-texto: #DBD4D3;
+            --cor-menus: #D2CCA1;
+            --cor-destaque: #E83151;
+
+            /* FONTES PRINCIPAIS*/
+            --fonte-titulo: Times;
+            --fonte-padrao: Arial;
+            --fonte-destque: Verdana;
+
         }
+
+        body {
+            background-color: var(--cor-fundo);
+            font-family: var(--fonte-padrao)
+        }
+
+
+        header {
+            text-align: center;
+            border-radius: 8px;
+            background-color: #E83151;
+            color: #387780;
+        }
+
+        main {
+            background-color: #D2CCA1;
+            color: #757780;
+        }
+
     </style>
 </head>
 <body>
