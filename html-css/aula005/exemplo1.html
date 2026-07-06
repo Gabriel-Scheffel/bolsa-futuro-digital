@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Imagem Dinâmica</h1>
+
+    <picture>
+        <!-- Se a tela for menor que 750px, abra essa imagem -->
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <!-- Se a tela for menor que 1050px, abra essa imagem -->
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <!-- Para telas maiores abra essa imagem -->
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+
+
+</body>
+</html>
