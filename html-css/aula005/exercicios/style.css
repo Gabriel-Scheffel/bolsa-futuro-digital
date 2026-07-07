@@ -31,13 +31,11 @@ header {
 }
 
 header > div {
-    height: 100%;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), var(--marrom-escuro));
+    height: 100%;
 }
 
 header > div > div {
-    display: block;
-    margin: auto;
     height: 100%;
     padding: 350px 0px;
     text-align: center;
