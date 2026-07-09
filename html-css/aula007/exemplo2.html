@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 500px;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        thead, tfoot {
+            background-color: gray;
+            color: white;
+        }
+
+        /* odd é ímpar em inglês */
+        tbody > tr:nth-child(odd) {
+            background-color: lightgrey;
+        }
+        
+        /* even é par em inglês */
+        tbody > tr:nth-child(even) {
+            background-color: lightgrey;
+        }
+        
+        tbody > tr:nth-child(2n) {
+            background-color: lightgrey;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Criando Tabelas Grandes</h1>
+
+    <table>
+        <caption>
+            População dos Municípios do Rio Grande do Sul
+        </caption>
+
+        <thead>
+            <tr>
+                <th scope="col">Município</th>
+                <th scope="col">População</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Porto Alegre</td>
+                <td>1.332.845</td>
+            </tr>
+            <tr>
+                <td>Caxias do Sul</td>
+                <td>463.501</td>
+            </tr>
+            <tr>
+                <td>Canoas</td>
+                <td>347.657</td>
+            </tr>
+            <tr>
+                <td>Pelotas</td>
+                <td>325.685</td>
+            </tr>
+            <tr>
+                <td>Santa Maria</td>
+                <td>271.735</td>
+            </tr>
+            <tr>
+                <td>Gravataí</td>
+                <td>265.074</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <th scope="row">Total de Habitantes</th>
+            <td>00000</td>
+        </tfoot>
+    </table>
+     
+
+</body>
+</html>
