@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 2px solid black;
+            border-radius: 8px;
+            width: 100px;
+            margin: 200px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        div {
+            /*
+            1º: 5px para a direita
+            2º: 10px para baixo
+            3º: 15px de desfoque (blur) - deixa a sombra suave
+            4º: rgba(0,0,0, 0.3) - Preto com 30% de transparência
+            */
+            box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        div > p {
+            /*
+            1º: 2px para a direita
+            2º: 2px para baixo
+            3º: 4px de desfoque
+            4º: Preto (aqui usamos a cor sólida ou rgba)
+            */
+            text-shadow: 2px 2px 4px black;
+        }
+
+
+        div:hover {
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>BOTÃO</p>
+    </div>
+</body>
+</html>

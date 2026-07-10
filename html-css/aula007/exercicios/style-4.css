@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4ece4; /* Fundo bege claro lembrando café com leite */
+    color: #3e2723; /* Marrom escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container-tabela {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Fundamental para grudar as bordas */
+    margin-top: 10px;
+}
+
+caption {
+    font-size: 22px;
+    font-weight: bold;
+    color: #5d4037;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+th, td {
+    border: 1px solid #d7ccc8; /* Borda marrom bem clarinha */
+    padding: 12px 15px;
+    text-align: center;
+}
+
+thead {
+    background-color: #5d4037; /* Marrom escuro para o cabeçalho */
+    color: white;
+    font-size: 16px;
+}
+
+/* Alinhando os dias da semana à esquerda */
+tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Efeito zebrado no corpo da tabela para facilitar a leitura */
+tbody tr:nth-child(even) {
+    background-color: #fcf8f5;
+}
+
+tbody tr:hover {
+    background-color: #f0e6e1; /* Corzinha ao passar o mouse */
+}
+
+tfoot {
+    background-color: #fff9c4; /* Fundo amarelo/creme de destaque */
+    font-weight: bold;
+    font-size: 18px;
+    color: #3e2723;
+}
+
+/* Alinhamos o texto "Faturamento Total..." à direita para ficar colado ao valor */
+tfoot th {
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* Destacando o valor financeiro final */
+tfoot td {
+    color: #2e7d32; /* Verde escuro para remeter a dinheiro/lucro */
+    font-size: 20px;
+}

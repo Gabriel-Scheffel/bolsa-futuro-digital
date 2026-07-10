@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-4.css">
+</head>
+<body>
+    
+    <div class="container-tabela">
+        <table>
+            <caption>Fechamento Semanal - Café Gourmet</caption>
+            
+            <thead>
+                <tr>
+                    <th>Dia da Semana</th>
+                    <th>Cafés Vendidos</th>
+                    <th>Doces Vendidos</th>
+                    <th>Receita Bruta</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>45</td>
+                    <td>20</td>
+                    <td>R$ 450,00</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>52</td>
+                    <td>25</td>
+                    <td>R$ 560,00</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>60</td>
+                    <td>32</td>
+                    <td>R$ 720,00</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>75</td>
+                    <td>40</td>
+                    <td>R$ 950,00</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>110</td>
+                    <td>65</td>
+                    <td>R$ 1.580,00</td>
+                </tr>
+            </tbody>
+            
+            <!-- A Mágica do Colspan acontece aqui no rodapé -->
+            <tfoot>
+                <tr>
+                    <!-- Este <th> está ocupando as colunas: Dia, Cafés e Doces (Total de 3) -->
+                    <th colspan="3">Faturamento Total da Semana:</th>
+                    <!-- E este <td> ocupa a última coluna, alinhado perfeitamente -->
+                    <td>R$ 4.260,00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+</html>

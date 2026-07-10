@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.caixa-tabela {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+table {
+    width: 400px;
+    border-collapse: collapse; /* Remove o espaço entre as células */
+    border: 2px solid #333; /* Borda externa grossa */
+}
+
+caption {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Borda leve entre os itens internos */
+    padding: 12px;
+}
+
+thead {
+    background-color: #333;
+    color: white;
+}
+
+/* Alinha a primeira coluna à esquerda */
+td:first-child, th:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Alinha a segunda coluna à direita */
+td:last-child, th:last-child {
+    text-align: right;
+}
+
+/* Pinta as linhas pares (even) de cinza claro */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Efeito visual extra: Destaca a linha ao passar o mouse */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}

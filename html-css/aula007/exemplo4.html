@@ -4,8 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body { 
+            font-family: sans-serif; padding: 20px; 
+        }
+
+        table { 
+            border-collapse: collapse; width: 100%; max-width: 600px; 
+        }
+        
+        th, td { 
+            border: 1px solid black; padding: 10px; text-align: center; 
+        }
+
+        thead { 
+            background-color: #333; color: white; 
+        }
+        
+        /* Pintando os cabeçalhos de linha para destaque */
+        th[scope="row"], th[scope="rowgroup"] {
+            background-color: #f0f0f0;
+            color: black;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     
+    <h2>Vendas de 2026</h2>
+
+    <table>
+        
+        <thead>
+            <tr>
+                <td colspan="2"></td> 
+                
+                <!-- "colgroup" tem o escopo de 2 colunas, Q1 e Q2 -->
+                <th colspan="2" scope="colgroup">1º Semestre</th>          
+                <!-- O mesmo aqui, Q3 e Q4 -->
+                <th colspan="2" scope="colgroup">2º Semestre</th>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                
+                <th scope="col">Q1</th>
+                <th scope="col">Q2</th>
+                <th scope="col">Q3</th>
+                <th scope="col">Q4</th>
+            </tr>
+        </thead>       
+        <tbody>
+            <tr>
+                <!-- "rowgroup" tem o escopo de 2 linhas, RS e SC -->
+                <th rowspan="2" scope="rowgroup">Filial Sul</th>
+                
+                <th scope="row">RS</th>
+                <td>R$ 10k</td>
+                <td>R$ 12k</td>
+                <td>R$ 15k</td>
+                <td>R$ 18k</td>
+            </tr>
+
+            <tr>
+                <th scope="row">SC</th>
+                <td>R$ 8k</td>
+                <td>R$ 9k</td>
+                <td>R$ 11k</td>
+                <td>R$ 13k</td>
+            </tr>
+            
+            <!-- DADOS DO SUDESTE -->
+            <tr>
+                <!-- Aqui é apenas ROW, não tem rowspan -->
+                <th scope="row">Filial Sudeste</th>
+                <th scope="row">SP</th>
+                <td>R$ 50k</td>
+                <td>R$ 55k</td>
+                <td>R$ 60k</td>
+                <td>R$ 70k</td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
