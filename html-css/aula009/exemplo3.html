@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Criando Formulários</h1>
+
+    <!-- method diz respeito ao método de envio dos dados   -->
+    <!-- O padrão é "get", mas também podemos usar o "post" -->
+    <form action="info.php" method="post">
+        
+        <p>
+            <label for="inome">Nome:</label> 
+            <input type="text" name="nome" id="inome">
+        </p>
+        
+        <p>
+            <label for="icidade">Cidade:</label> 
+            <input type="text" name="cidade" id="icidade">
+        </p>
+        
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+
+</body>
+</html>
