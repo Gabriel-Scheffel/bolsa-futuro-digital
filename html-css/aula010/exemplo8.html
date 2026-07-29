@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <form action="cadastro.php" method="get" autocomplete="on">
+        <p>
+            <label for="iano">Em que ano você nasceu? </label>
+            <input type="number" name="ano" id="iano" min="1900" max="2026" oninput="calcIdade()">
+        </p>
+
+        <p>
+            <label for="iidade">Sua idade em 2026 é: </label>
+            <output id="iidade">0</output>
+        </p>
+    </form>
+
+    <script>
+        function calcIdade() {
+            iidade.innerHTML = 2026 - Number(iano.value)
+        }
+    </script>
+
+</body>
+</html>
