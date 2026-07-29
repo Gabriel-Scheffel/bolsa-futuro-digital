@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+
+        <p>
+            <label for="inivel">Volume</label>
+            <input type="range" name="nivel" id="inivel">
+            <!-- Por padrão o nível vai de 1 a 100 -->
+            <!-- Por exemplo min=1 e max=5 faz ir de 1 a 5 -->
+        </p>
+
+        <p>
+            <label for="ifoto">Foto</label>
+            <input type="file" name="foto" id="ifoto">
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+
+    </form>
+</body>
+</html>
