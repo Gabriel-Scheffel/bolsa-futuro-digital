@@ -37,4 +37,5 @@ article {
     width: 600px;
     display: block;
     margin: auto;
+    text-align: justify;
 }
