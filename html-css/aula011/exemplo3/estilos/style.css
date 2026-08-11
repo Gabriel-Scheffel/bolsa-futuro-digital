@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/* Configs. gerais  */
+
+* {
+    margin: 0px;
+    margin: 0px;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f6f6f6;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+h1 {text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.219);
+    padding: 10px;
+}
+
+/* Config. portrait  */
+@media screen and (orientation: portrait){
+    body {
+        background-image: url(../imagens/vertical.png);
+        background-position: center bottom;
+        } 
+}
+
+/* Config. landscape  */
+@media screen and (orientation: landscape) {
+    body {
+        background-image: url(../imagens/horizontal.png);
+        background-position: left bottom;
+    }   
+}
