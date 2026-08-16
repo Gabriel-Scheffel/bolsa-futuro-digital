@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* CONTAINER: header */
+/* ITENS: h1 e nav */
+
+/* CONTEINER: nav */
+/* ITENS: a */
+
+body { /* PRIMEIRO */
+    font-size: 1em;
+    background-color: lightgray;
+    height: 100vh;
+    width: 100vw;
+    /* ===================== */
+}
+
+header { /* PRIMEIRO */
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    /* ===================== */
+
+    /* QUARTO */
+    display: flex;
+    flex-flow: row wrap;
+    /* Colocar os itens nas pontas */
+    justify-content: space-between;
+    /* Alinhar itens no eixo principal */
+    align-items: center;
+}
+
+header > h1 { /* SEGUNDO - BORDAS */
+    /* border: 1px dotted black;  */
+    /*Não cresce - não encolhe - fixo em 200px */
+    flex: 0 0 200px;
+}
+
+header > nav { /* SEGUNDO - BORDAS */
+    /* border: 1px dotted black;   */
+
+    /* QUINTO */
+    /* transforma o nav em um container flex */
+    display: flex;
+    /* Coluna e quebra */
+    flex-flow: row wrap;
+    /* Coloca os itens ao final */
+    justify-content: flex-end;
+}
+
+header > nav > a { /* TERCEIRO */
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    /* ===================== */
+}
+
+header > nav > a:hover { /* TERCEIRO */
+    background-color: white;
+    color: black;
+    transition: background-color .5s;
+    /* ===================== */
+}
+
+main { /* PRIMEIRO */
+    background-color: white;  
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;   
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.452);
+    /* ===================== */
+}

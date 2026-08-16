@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/*
+    Mostrar exemplo com:
+body {
+    background-color: red;
+}
+*/
+
+header, header > nav {
+    /* Transaforma o menu em coluna */
+    flex-flow: column nowrap;
+}
+
+header > h1 {
+    /* Tamanho no eixo principal */
+    flex-basis: 50px;
+}
+
+header > nav > a {
+    /* Aumenta a largura do itens */
+    width: 90vw;
+}
