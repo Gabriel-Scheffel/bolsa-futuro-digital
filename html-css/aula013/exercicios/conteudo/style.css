@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+/* Começar por tudo que não é flex-box  */
+/* ============= PRIMEIRO ============= */
 body {
     font-size: 1em;
     line-height: 1.5em;
@@ -23,12 +25,21 @@ header, section.normal {
 section.flex-content {
     padding: 20px;
     background-color: gray;
-
+    /* ==================================== */
+    /* ======== TERCEIRO: flex-flow ======= */
     display: flex;
     flex-flow: column nowrap;
+    /* ==================================== */
+}
+
+section > article {
+    /* ======== SEGUNDO: add bordas ======= */
+    border: 2px dashed green;
+    /* ==================================== */
 }
 
 article.text-media {
+    /* ======= QUARTO: flex nos itens ===== */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -38,18 +49,30 @@ article.media-text {
     display: flex;
     flex-flow: row wrap-reverse;
     justify-content: space-between;
+    /* ==================================== */
 }
 
 article > div.text {
+    /* ======= QUARTO: flex nos itens ===== */
     flex: 1 1 500px;
+    /* ==================================== */
+
+    /* ======== QUINTO: add bordas ======== */
     border: 2px dashed blue;
+    /* ==================================== */
 }
 
 article > div.media {
+    /* ======= QUARTO: flex nos itens ===== */
     flex: 1 0 500px;
+    /* ==================================== */
+
+    /* ======== QUINTO: add bordas ======== */
     border: 2px dashed red;
+    /* ==================================== */
 }
 
+/* ========= SEXTO: arrumar midias ========= */
 div.media > img {
     display: block;
     margin: auto;
@@ -61,3 +84,4 @@ div.media > iframe {
     margin: auto;
     padding: 0px 20px;
 }
+/* ========================================== */
