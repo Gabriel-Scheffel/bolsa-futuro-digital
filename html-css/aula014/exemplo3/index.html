@@ -12,14 +12,36 @@
         div.container {
             border: 3px solid blue;
             display: grid;
+            /*
+            grid-template-rows: 50px 50px 50px
+            grid-template-columns: auto auto auto (120px 120px 120px)
+            */
+            /* Mostrar 1fr, 2fr, 4fr */
+            /* Diferença entre 1fr 4fr 1fr e repeat(2, 1fr) 4fr*/
+            /* 100px 40% repeat(2, 1fr) */
             grid-template: repeat(3, 80px) / repeat(3, 120px);
+            /* Adicionar depois */
+            /* Adicionar mais itens! */
             grid-auto-flow: column;
-            grid-auto-rows: 80px;
+            grid-auto-rows: 80px;      
             grid-auto-columns: 120px;
+            /* ================ */
             place-items: normal normal;
             place-content: normal normal;
             gap: 10px;
         }
+
+        /* Exemplo 2
+        div.container {
+            border: 3px solid blue;
+            height: 250px;
+            display: grid;
+            grid-template: repeat(3, auto) / repeat(3, auto);
+            place-items: start center;
+            place-content: space-between end;
+            gap: 10px;
+        }
+        */
 
         div.item {
             border: 3px solid red;
