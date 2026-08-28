@@ -7,5 +7,6 @@ O material foi pensado para quem tem pouco ou nenhum conhecimento de programaç�
 Muito do que está disponível aqui foi inspirado nas aulas do professor Gustavo Guanabara do canal Curso em Vídeo, tomei muitos de seus exemplos emprestados e devolvo os devidos créditos.
 
 Curso dele no youtube: https://youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&si=DDSv9yslucXhLyAQ
+
 Página no GitHub: https://github.com/gustavoguanabara/html-css/tree/master
 
