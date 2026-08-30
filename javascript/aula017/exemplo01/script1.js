@@ -18,7 +18,7 @@ let idade = 25
 console.log(idade)
 
 // idade recebe 50
-let idade = 50
+idade = 50
 
 // Agora idade não vale mais 25 e o console mostra 50
 console.log(idade)

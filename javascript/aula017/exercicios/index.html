@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-size: 3em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULADORA</h1>
+
+    <script>
+        let a = window.prompt('Insira um número:')
+        let b = window.prompt('Insira outro número:')
+
+        let soma = Number(a) + Number(b)
+        let sub = Number(a) - Number(b);
+        let mult = Number(a) * Number(b)
+        let div = Number(a) / Number(b)
+
+        window.alert(`
+                    Soma: ${a}+${b}=${soma} 
+                    Subtração: ${a}-${b}=${sub} 
+                    Multiplicação: ${a}*${b}=${mult} 
+                    Divisão: ${a}/${b}=${div}
+                    `)
+    </script>
+</body>
+</html>
