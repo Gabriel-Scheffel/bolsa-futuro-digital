@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FESTA MAIS</h1>
+
+    <script>
+        let idade = window.prompt('Insira sua idade:')
+
+        if (idade < 18) {
+            window.alert('Entrada negada!')
+        } else {
+            let ingresso = window.confirm('Você possui ingresso?')
+
+            if (ingresso) {
+                window.alert('Entrada liberada!')
+            } else {
+                let compra = window.confirm('Deseja comprar um ingresso?')
+
+                if(compra) {
+                    window.alert('Você será redirecionado para a página de compra!')
+                } else {
+                    window.alert('Entrada negada!')
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
