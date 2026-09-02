@@ -8,4 +8,3 @@ let boolean = true   // Boolean - true ou false
 console.log(typeof texto)
 
 
-

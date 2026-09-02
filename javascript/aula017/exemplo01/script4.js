@@ -1,4 +1,18 @@
 
+let a = 8
+let b = 2
+
+// SOMA
+console.log(a + b)
+// SUBTRAÇÃO
+console.log(a - b)
+// MULTIPLICAÇÃO
+console.log(a * b)
+// DIVISÃO
+console.log(a / b)
+
+
+/*
 let a = 9
 let b = 2
 
@@ -11,6 +25,6 @@ b++ // Incremento: b = b + 1 (adiciona um)
 console.log(b)
 b-- // Decremento: b = b - 1 (subtrai um)
 console.log(b)
-
+*/
 
 
