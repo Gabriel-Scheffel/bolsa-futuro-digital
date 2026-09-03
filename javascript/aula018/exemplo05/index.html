@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estudando DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <!-- ADICIONAR ID DEPOIS -->
+    <!-- <div name='msg'> para selecionar por name -->
+    <!-- <div class='msg'> para selecionar por classe -->
+    
+    <script>
+        //window.document.write('Olá Mundo!')
+
+        // Pega o primeiro parágrafo [0] e coloca em p1
+        let p1 = window.document.getElementsByTagName('p')[0]
+        // mostra na tela o valor de p1
+        window.document.write('Está escrito: ' + p1.innerText)
+        // .innerText traz apenas o texto
+        // .innerHTML traz o texto formatado
+        //p1.style.color = 'blue'
+        
+        /*
+        let corpo = window.document.body
+        corpo.style.background = 'black'
+        */
+
+        // Pega a div pelo id dela
+        let d = window.document.getElementById('msg')
+        // Modifica o estilo e conteúdo da div
+        d.style.background = 'green'
+        d.innerText = 'Aguardando...'
+        
+        /*
+        // Podemos usar a mesma identificação do CSS
+        let d = window.document.querySelector('div#msg')
+        d.style.background = 'green'
+        d.innerText = 'Aguardando...'
+        */
+    </script>
+
+</body>
+</html>
