@@ -17,21 +17,34 @@
     </style>
 </head>
 <body>
+    <!-- adicionar na div onclick="clicar()" -->
+    <!-- adicionar a função onmouseenter="entrar()" e "sair()"-->
     <div id="area">
         Interaja...
     </div>
 
     <script>
+        // 2º definir a variavel exeterna
         var area = window.document.getElementById('area')
 
+        // 5º adicionar os eventos
         area.addEventListener('click', clicar)
         area.addEventListener('mouseenter', entrar)
         area.addEventListener('mouseout', sair)
 
+        // 1º criar a função clicar()
+        /* 
+        function clicar() {
+        var area = window.document.getElementById('area')
+        area.innerText = 'Clicou!'
+        } 
+        */
         function clicar() {
             area.innerText = 'Clicou!'
+            // 4º mudar a cor
             area.style.background = 'blue'
         }
+        // 3º criar as funções entrar() e sair()
         function entrar() {
             area.innerText = 'Entrou!'
         }
