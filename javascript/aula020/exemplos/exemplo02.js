@@ -2,7 +2,7 @@
 let frutas = ['maçã', 'banana']
 
 // Adiciona 'laranja' ao final
-frutas.push('laranja')
+frutas[2] = 'laranja'
 
 // Irá exibir ['maçã', 'banana', 'laranja']
 console.log(frutas)
