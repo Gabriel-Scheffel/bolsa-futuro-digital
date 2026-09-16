@@ -24,8 +24,8 @@ function media() {
     let resultado = document.getElementById('resultado')
     
     if (media > 6) {
-        resultado.innerHTML = 'Média: ' + media + ' - APROVADO!'
+        resultado.innerHTML = `Média: ${media} - APROVADO!`
     } else {
-        resultado.innerHTML = 'Média: ' + media + ' - REPROVADO!'
+        resultado.innerHTML = `Média: ${media} - REPROVADO!`
     }
 }
