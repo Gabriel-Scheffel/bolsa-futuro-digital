@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="txt" id="txt">
+    <input type="button" value="Enviar" id="btn">
+    <ul>
+
+    </ul>
+
+    <script>
+        let btn = document.querySelector('input#btn')
+        let lista = document.querySelector('ul')
+
+        function addLista() {
+            let txt = document.querySelector('input#txt')
+
+            let item = document.createElement('li')
+
+            item.innerText =  txt.value
+
+            lista.appendChild(item)
+        }
+
+        btn.addEventListener('click', addLista)
+
+    </script>
+</body>
+</html>

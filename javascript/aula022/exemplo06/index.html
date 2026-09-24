@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <button>Clique aqui!</button>
+        </li>
+        <br>
+        <li>
+            <button>Clique aqui!</button>
+        </li>
+        <br>
+        <li>
+            <button>Clique aqui!</button>
+        </li>
+    </ul>
+
+    <script>
+        let itens = document.querySelectorAll('li')
+
+        //function fn() {
+        //    alert('Botão clicado!')
+        //}
+        
+        //itens[0].addEventListener('click', fn)
+        //itens[1].addEventListener('click', fn)
+        //itens[2].addEventListener('click', fn)
+        
+        let lista = document.querySelector('ul')
+
+        lista.addEventListener('click', function(e) {
+            if (e.target.tagName === 'BUTTON') {
+                alert('Botão cliado!')
+            }
+        })
+
+    </script>
+</body>
+</html>

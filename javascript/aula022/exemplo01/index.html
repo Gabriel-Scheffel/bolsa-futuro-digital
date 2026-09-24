@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: blue;
+            font-size: 1.8em;
+            background-color: black;
+
+            border: 4px dashed white;
+        }
+
+        div#div {
+            border: 2px solid black;
+            border-radius: 4px;
+            height: 200px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ALTERANDO ESTILO COM JS</h1>
+
+    <p>Alterando o texto de um parágrafo!</p>
+
+    <div id="div"></div>
+
+    <script>
+        let titulo = document.querySelector('h1')
+        let p = document.querySelector('p')
+        let div = document.querySelector('div')
+
+        // .style
+        titulo.style.color = 'purple'
+
+        titulo.style.fontSize = '2em'
+
+        titulo.style.backgroundColor = 'gray'
+
+        titulo.style.border = '2px solid blue'
+        titulo.style.borderRadius = '8px'
+
+        // innerText
+        p.innerText = 'Novo texto!'
+
+        // = substituti o valor anterior pelo novo
+        // += adiciona o valor novo sem apagar o anterior
+
+        // innerHTML
+        div.innerHTML = '<strong> ATENÇÃO! </strong>'
+    </script>
+</body>
+</html>

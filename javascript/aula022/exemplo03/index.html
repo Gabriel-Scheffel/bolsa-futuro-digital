@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 80px;
+            width: 140px;
+            font-size: 1.6em;
+            border-radius: 10px;
+            background-color: lightgrey;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pressione o botão</h1>
+
+    <button class="inativo" onclick="ativar()">ATIVAR</button>
+
+    <script>
+
+        function ativar() {
+
+        let btn = document.querySelector('button')
+            
+            if (btn.classList.contains('ativo')){
+
+                btn.classList.remove('ativo')
+                btn.classList.add('inativo')
+
+                btn.style.backgroundColor = 'lightgrey'
+
+            } else if (btn.classList.contains('inativo')){
+
+                btn.classList.remove('inativo')
+                btn.classList.add('ativo')
+
+                btn.style.backgroundColor = 'lightgreen'
+            }
+        } 
+
+    </script>
+
+</body>
+</html>
