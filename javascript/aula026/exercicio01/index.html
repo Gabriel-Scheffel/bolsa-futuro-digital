@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de personagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha de Personagem</h1>
+
+        <div class="topo">
+            <input id="nome" type="text" placeholder="Nome">
+            <select id="classe">
+                <option value="guerreiro">Guerreiro</option>
+                <option value="mago">Mago</option>
+                <option value="ladino">Ladino</option>
+            </select>
+        </div>
+
+        <p>Pontos: <b id="restantes">10</b></p>
+        <div class="atr">
+            <span>Força</span>
+            <div>
+                <button id="btn-forca-menos">−</button>
+                <b id="v-forca">5</b>
+                <button id="btn-forca-mais">+</button>
+            </div>
+        </div>
+
+        <div class="atr">
+            <span>Agilidade</span>
+            <div>
+                <button id="btn-agilidade-menos">−</button>
+                <b id="v-agilidade">5</b>
+                <button id="btn-agilidade-mais">+</button>
+            </div>
+        </div>
+
+        <div class="atr">
+            <span>Inteligência</span>
+            <div>
+                <button id="btn-inteligencia-menos">−</button>
+                <b id="v-inteligencia">5</b>
+                <button id="btn-inteligencia-mais">+</button>
+            </div>
+        </div>
+
+        <div class="atr">
+            <span>Resistência</span>
+            <div>
+                <button id="btn-resistencia-menos">−</button>
+                <b id="v-resistencia">5</b>
+                <button id="btn-resistencia-mais">+</button>
+            </div>
+        </div>
+
+        <div class="acoes">
+            <button id="btn-bonus">Aplicar Bônus</button>
+            <button id="btn-salvar">Salvar Ficha</button>
+        </div>
+
+        <div id="fichas"></div>
+
+    </div>
+</body>
+</html>
