@@ -1,120 +1,180 @@
 @charset "UTF-8";
 
+/* Identidade visual baseada no modelo da aula024 */
+:root {
+    --azul: rgb(70, 142, 236);
+    --azul-escuro: rgb(45, 110, 200);
+    --azul-claro: rgb(232, 241, 253);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f0f0; 
-    padding: 32px;
+    background-color: var(--azul);
+    font: normal 1.2em Arial;
+    padding: 0 16px;
 }
 
-.container { 
-    max-width: 480px; 
-    margin: 0 auto; 
+/* Cartão branco central (equivale ao <main> do modelo) */
+.container {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 500px;
+    margin: 110px auto 0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.375);
 }
 
-h1 { 
-    color: #333; 
-    margin-bottom: 12px; 
+/* Título branco sobre o fundo azul (equivale ao <header> do modelo) */
+h1 {
+    position: absolute;
+    top: -95px;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
 }
 
-.topo { 
-    display: flex; 
-    gap: 8px; 
-    margin-bottom: 10px; 
+/* Rodapé branco em itálico (equivale ao <footer> do modelo) */
+body::after {
+    content: "\00A9  GabrielScheffel";  /* © (o 1º espaço encerra o código, o 2º aparece) */
+    display: block;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    margin: 1em 0;
 }
 
-input { 
-    flex: 1; 
-    padding: 8px 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
+.topo {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
 }
 
-select { 
-    padding: 8px 10px; 
+input, select {
+    font: inherit;
+    font-size: 0.85em;
+    padding: 8px 10px;
     border: 1px solid #ccc;
-    border-radius: 4px; 
+    border-radius: 6px;
 }
 
-p { 
-    color: #555; 
-    margin-bottom: 10px; 
+input {
+    flex: 1;
+    min-width: 0;
+}
+
+input:focus, select:focus {
+    outline: 2px solid var(--azul);
+    border-color: var(--azul);
+}
+
+p {
+    color: #555;
+    margin: 10px 0;
+}
+
+#restantes {
+    color: var(--azul);
 }
 
 .atr {
-    background: white; 
+    background: var(--azul-claro);
     padding: 10px 14px;
-    margin-bottom: 6px; 
-    border-radius: 6px;
-    display: flex; 
+    margin-bottom: 6px;
+    border-radius: 8px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.atr span { 
-    font-weight: bold; 
-    color: #333; 
+.atr span {
+    font-weight: bold;
+    color: #333;
 }
 
-.atr div { 
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
+.atr div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .atr button {
-    width: 28px; 
-    height: 28px; 
-    border: 1px solid #ccc;
-    border-radius: 4px; 
-    background: #f8f8f8;
-    cursor: pointer; 
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+    background: var(--azul);
+    color: white;
+    cursor: pointer;
     font-size: 16px;
 }
 
-.atr b { 
-    min-width: 24px; 
-    text-align: center; 
+.atr button:hover {
+    background: var(--azul-escuro);
 }
 
-.acoes { 
-    display: flex; 
-    gap: 8px; 
-    margin: 14px 0; 
+.atr b {
+    min-width: 24px;
+    text-align: center;
+}
+
+.acoes {
+    display: flex;
+    gap: 8px;
+    margin: 14px 0;
 }
 
 .acoes button {
-    flex: 1; padding: 10px; 
+    flex: 1;
+    padding: 10px;
     border: none;
-    border-radius: 4px; 
+    border-radius: 6px;
     cursor: pointer;
+    font: inherit;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 }
 
-#btn-bonus  { 
-    background: #67e8f9; 
-    color: #1a1a1a; 
+#btn-bonus  {
+    background: var(--azul);
 }
 
-#btn-salvar { 
-    background: #4ade80; 
-    color: #1a1a1a; 
+#btn-bonus:hover {
+    background: var(--azul-escuro);
+}
+
+#btn-salvar {
+    background: rgb(34, 160, 90);
+}
+
+#btn-salvar:hover {
+    background: rgb(25, 130, 72);
+}
+
+.acoes button:disabled,
+select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .ficha {
-    background: white; 
+    background: var(--azul-claro);
     padding: 10px 14px;
-    margin-bottom: 6px; 
-    border-radius: 6px;
-    border-left: 4px solid #4ade80;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    border-left: 4px solid var(--azul);
 }
 
-.ficha h3 { 
-    margin: 0 0 4px; 
-    color: #333; 
-    font-size: 14px; 
+.ficha h3 {
+    margin: 0 0 4px;
+    color: #333;
+    font-size: 0.8em;
 }
 
-.ficha p  { 
-    margin: 0; 
-    color: #666; 
-    font-size: 13px; 
+.ficha p  {
+    margin: 0;
+    color: #666;
+    font-size: 0.7em;
 }
