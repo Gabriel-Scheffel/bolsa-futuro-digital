@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Weather app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+</head>
+
+<body>
+  <a href="#main" class="visually-hidden skip-link">Skip to main content</a>
+
+  <header class="header wrapper">
+    <div class="header__content">
+      <a class="header__homelink" href="/">
+        <img class="header__logo" src="assets/images/logo.svg" alt="Weather Now Home" width="197" height="40">
+      </a>
+
+      <select class="dropdown header__dropdown" name="units" id="ddlUnits">
+        <option value="">Units</option>
+        <option value="C">&deg;C</option>
+        <option value="F">&deg;F</option>
+      </select>
+    </div>
+
+  </header>
+
+  <main id="main" class="main wrapper">
+
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">How's the sky looking today?</h1>
+
+        <div class="hero__search">
+          <input class="hero__textbox" type="text" name="search" id="txtSearch" placeholder="Search for a place...">
+          <button id="btnSearch" class="hero__button" type="submit">Search</button>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="dashboard">
+      <section class="current">
+        <h2 class="visually-hidden">Current Location Temperature</h2>
+
+        <div class="current__weather">
+          <div class="current__location">
+            <div id="dvCityCountry" class="current__city">Berlin, Germany</div>
+            <div id="dvCurrDate" class="current__date">Tuesday, Aug 5, 2025</div>
+          </div>
+          <div class="current__info">
+            <img class="current__icon" src="assets/images/icon-sunny.webp" alt="" width="320" height="320">
+            <div class="current__temp"><span id="dvCurrTemp">20</span>&deg;</div>
+          </div>
+        </div>
+
+        <div class="current__conditions">
+          <div class="block current__condition">
+            <p class="current__condition-title">Feels Like</p>
+            <p class="current__condition-value"><span id="pFeelsLike"></span>&deg;</p>
+          </div>
+          <div class="block current__condition">
+            <p class="current__condition-title">Humidity</p>
+            <p class="current__condition-value"><span id="pHumidity"></span>%</p>
+          </div>
+          <div class="block current__condition">
+            <p class="current__condition-title">Wind</p>
+            <p id="pWind" class="current__condition-value"></p>
+          </div>
+          <div class="block current__condition">
+            <p class="current__condition-title">Precipitation</p>
+            <p id="pPrecipitation" class="current__condition-value"></p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="daily">
+        <h2 class="section__title daily__title">Daily forecast</h2>
+        <div class="daily__forecast">
+          <div id="dvForecastDay1" class="block daily__day"></div>
+          <div id="dvForecastDay2" class="block daily__day"></div>
+          <div id="dvForecastDay3" class="block daily__day"></div>
+          <div id="dvForecastDay4" class="block daily__day"></div>
+          <div id="dvForecastDay5" class="block daily__day"></div>
+          <div id="dvForecastDay6" class="block daily__day"></div>
+          <div id="dvForecastDay7" class="block daily__day"></div>
+        </div>
+      </section>
+
+      <section class="hourly">
+
+        <div class="hourly__content">
+          <div class="hourly__header">
+            <h2 class="section__title hourly__title">Hourly forecast</h2>
+            <select class="dropdown hourly__select" name="hourly__select" id="ddlDay"></select>
+          </div>
+
+          <div class="hourly__hours">
+            <div id="dvForecastHour1" class="hourly__hour"></div>
+            <div id="dvForecastHour2" class="hourly__hour"></div>
+            <div id="dvForecastHour3" class="hourly__hour"></div>
+            <div id="dvForecastHour4" class="hourly__hour"></div>
+            <div id="dvForecastHour5" class="hourly__hour"></div>
+            <div id="dvForecastHour6" class="hourly__hour"></div>
+            <div id="dvForecastHour7" class="hourly__hour"></div>
+            <div id="dvForecastHour8" class="hourly__hour"></div>
+            <div id="dvForecastHour9" class="hourly__hour"></div>
+            <div id="dvForecastHour10" class="hourly__hour"></div>
+            <div id="dvForecastHour11" class="hourly__hour"></div>
+            <div id="dvForecastHour12" class="hourly__hour"></div>
+            <div id="dvForecastHour13" class="hourly__hour"></div>
+            <div id="dvForecastHour14" class="hourly__hour"></div>
+            <div id="dvForecastHour15" class="hourly__hour"></div>
+            <div id="dvForecastHour16" class="hourly__hour"></div>
+            <div id="dvForecastHour17" class="hourly__hour"></div>
+            <div id="dvForecastHour18" class="hourly__hour"></div>
+            <div id="dvForecastHour19" class="hourly__hour"></div>
+            <div id="dvForecastHour20" class="hourly__hour"></div>
+            <div id="dvForecastHour21" class="hourly__hour"></div>
+            <div id="dvForecastHour22" class="hourly__hour"></div>
+            <div id="dvForecastHour23" class="hourly__hour"></div>
+            <div id="dvForecastHour24" class="hourly__hour"></div>
+          </div>
+        </div>
+
+
+      </section>
+    </div>
+
+
+  </main>
+
+  <!-- Units
+
+  Switch to Imperial/Metric
+
+  Temperature
+
+  Celsius (Â°C)
+  Fahrenheit (Â°F)
+
+  Wind Speed
+
+  km/h
+  mph
+
+  Precipitation
+
+  Millimeters (mm)
+  Inches (in)
+
+  
+
+  Search for a city, e.g., New York
+  Search
+
+  Feels like
+
+  Humidity
+
+  Wind  
+  
+  Precipitation
+
+  Daily forecast
+
+  Hourly forecast
+  Insert hourly forecast for the selected day here -->
+
+</body>
+
+</html>
