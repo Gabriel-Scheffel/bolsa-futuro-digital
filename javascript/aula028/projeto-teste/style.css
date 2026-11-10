@@ -210,34 +210,6 @@
 }
 
 @layer component {
-  .header {
-    .header__content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-block-start: 16px;
-    }
-
-    .header__homelink {
-    }
-
-    .header__logo {
-      width: calc(137 / 16 * 1rem);
-
-      @media (width >= calc(700 / 16 * 1rem)) {
-        width: calc(197 / 16 * 1rem);
-      }
-    }
-
-    .header__dropdown {
-      max-width: 10ch;
-      background-image: url("assets/images/icon-units.svg");
-      background-repeat: no-repeat;
-      background-position: 16px center;
-      padding: 12px 40px;
-    }
-  }
-
   .hero {
     .hero__content {
       display: grid;

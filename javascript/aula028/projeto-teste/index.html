@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+  <!-- exibe o site corretamente de acordo com o dispositivo do usuário -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 
-  <title>Frontend Mentor | Weather app</title>
+  <title>Frontend Mentor | App de previsão do tempo</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 
 </head>
 
 <body>
-  <a href="#main" class="visually-hidden skip-link">Skip to main content</a>
-
-  <header class="header wrapper">
-    <div class="header__content">
-      <a class="header__homelink" href="/">
-        <img class="header__logo" src="assets/images/logo.svg" alt="Weather Now Home" width="197" height="40">
-      </a>
-
-      <select class="dropdown header__dropdown" name="units" id="ddlUnits">
-        <option value="">Units</option>
-        <option value="C">&deg;C</option>
-        <option value="F">&deg;F</option>
-      </select>
-    </div>
-
-  </header>
+  <a href="#main" class="visually-hidden skip-link">Pular para o conteúdo principal</a>
 
   <main id="main" class="main wrapper">
 
     <section class="hero">
       <div class="hero__content">
-        <h1 class="hero__title">How's the sky looking today?</h1>
+        <h1 class="hero__title">Como está o céu hoje?</h1>
 
         <div class="hero__search">
-          <input class="hero__textbox" type="text" name="search" id="txtSearch" placeholder="Search for a place...">
-          <button id="btnSearch" class="hero__button" type="submit">Search</button>
+          <input class="hero__textbox" type="text" name="search" id="txtSearch" placeholder="Buscar um local...">
+          <button id="btnSearch" class="hero__button" type="submit">Buscar</button>
         </div>
       </div>
 
@@ -48,12 +33,12 @@
 
     <div class="dashboard">
       <section class="current">
-        <h2 class="visually-hidden">Current Location Temperature</h2>
+        <h2 class="visually-hidden">Temperatura do local atual</h2>
 
         <div class="current__weather">
           <div class="current__location">
-            <div id="dvCityCountry" class="current__city">Berlin, Germany</div>
-            <div id="dvCurrDate" class="current__date">Tuesday, Aug 5, 2025</div>
+            <div id="dvCityCountry" class="current__city">Porto Alegre, BR</div>
+            <div id="dvCurrDate" class="current__date">terça-feira, 5 de ago. de 2025</div>
           </div>
           <div class="current__info">
             <img class="current__icon" src="assets/images/icon-sunny.webp" alt="" width="320" height="320">
@@ -63,19 +48,19 @@
 
         <div class="current__conditions">
           <div class="block current__condition">
-            <p class="current__condition-title">Feels Like</p>
+            <p class="current__condition-title">Sensação térmica</p>
             <p class="current__condition-value"><span id="pFeelsLike"></span>&deg;</p>
           </div>
           <div class="block current__condition">
-            <p class="current__condition-title">Humidity</p>
+            <p class="current__condition-title">Umidade</p>
             <p class="current__condition-value"><span id="pHumidity"></span>%</p>
           </div>
           <div class="block current__condition">
-            <p class="current__condition-title">Wind</p>
+            <p class="current__condition-title">Vento</p>
             <p id="pWind" class="current__condition-value"></p>
           </div>
           <div class="block current__condition">
-            <p class="current__condition-title">Precipitation</p>
+            <p class="current__condition-title">Precipitação</p>
             <p id="pPrecipitation" class="current__condition-value"></p>
           </div>
         </div>
@@ -83,7 +68,7 @@
       </section>
 
       <section class="daily">
-        <h2 class="section__title daily__title">Daily forecast</h2>
+        <h2 class="section__title daily__title">Previsão diária</h2>
         <div class="daily__forecast">
           <div id="dvForecastDay1" class="block daily__day"></div>
           <div id="dvForecastDay2" class="block daily__day"></div>
@@ -99,7 +84,7 @@
 
         <div class="hourly__content">
           <div class="hourly__header">
-            <h2 class="section__title hourly__title">Hourly forecast</h2>
+            <h2 class="section__title hourly__title">Previsão por hora</h2>
             <select class="dropdown hourly__select" name="hourly__select" id="ddlDay"></select>
           </div>
 
@@ -138,42 +123,42 @@
 
   </main>
 
-  <!-- Units
+  <!-- Unidades
 
-  Switch to Imperial/Metric
+  Alternar para Imperial/Métrico
 
-  Temperature
+  Temperatura
 
-  Celsius (Â°C)
-  Fahrenheit (Â°F)
+  Celsius (°C)
+  Fahrenheit (°F)
 
-  Wind Speed
+  Velocidade do vento
 
   km/h
   mph
 
-  Precipitation
+  Precipitação
 
-  Millimeters (mm)
-  Inches (in)
+  Milímetros (mm)
+  Polegadas (in)
 
   
 
-  Search for a city, e.g., New York
-  Search
+  Buscar uma cidade, ex.: Nova York
+  Buscar
 
-  Feels like
+  Sensação térmica
 
-  Humidity
+  Umidade
 
-  Wind  
+  Vento
   
-  Precipitation
+  Precipitação
 
-  Daily forecast
+  Previsão diária
 
-  Hourly forecast
-  Insert hourly forecast for the selected day here -->
+  Previsão por hora
+  Inserir aqui a previsão por hora do dia selecionado -->
 
 </body>
 

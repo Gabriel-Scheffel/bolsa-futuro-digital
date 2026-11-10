@@ -1,4 +1,3 @@
-const ddlUnits = document.querySelector("#ddlUnits");
 const ddlDay = document.querySelector("#ddlDay");
 const txtSearch = document.querySelector("#txtSearch");
 const btnSearch = document.querySelector("#btnSearch");
@@ -12,10 +11,13 @@ const pPrecipitation = document.querySelector("#pPrecipitation");
 
 let cityName, countryName, weatherData;
 
-async function getGeoData() {
-  let search = txtSearch.value;
+// cidade usada quando o campo de busca está vazio
+const defaultCity = "Porto Alegre, RS, Brasil";
 
-  const url = `https://nominatim.openstreetmap.org/search?q=${search}&format=jsonv2&addressdetails=1`;
+async function getGeoData() {
+  let search = txtSearch.value.trim() || defaultCity;
+
+  const url = `https://nominatim.openstreetmap.org/search?q=${search}&format=jsonv2&addressdetails=1&accept-language=pt-BR`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -37,7 +39,8 @@ async function getGeoData() {
 
 function loadLocationData(locationData) {
   let location = locationData[0].address;
-  cityName = location.city;
+  // dependendo do tamanho do lugar, o nome vem em city, town ou village
+  cityName = location.city || location.town || location.village || location.municipality || locationData[0].name;
   countryName = location.country_code.toUpperCase();
 
   let dateOptions = {
@@ -47,7 +50,7 @@ function loadLocationData(locationData) {
     weekday: "long",
   };
 
-  let currDate = new Intl.DateTimeFormat("en-US", dateOptions).format(new Date());
+  let currDate = new Intl.DateTimeFormat("pt-BR", dateOptions).format(new Date());
 
   //console.log(cityName, countryName, date);
 
@@ -56,16 +59,10 @@ function loadLocationData(locationData) {
 }
 
 async function getWeatherData(lat, lon) {
+  // unidades fixas: °C, km/h e mm
   let tempUnit = "celsius";
   let windUnit = "kmh";
   let precipUnit = "mm";
-
-  // if toggle value = F
-  if (ddlUnits.value === "F") {
-    tempUnit = "fahrenheit";
-    windUnit = "mph";
-    precipUnit = "inch";
-  }
 
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,precipitation,wind_speed_10m&wind_speed_unit=${windUnit}&temperature_unit=${tempUnit}&precipitation_unit=${precipUnit}`;
 
@@ -90,8 +87,8 @@ function loadCurrentWeather() {
   dvCurrTemp.textContent = Math.round(weatherData.current.temperature_2m);
   pFeelsLike.textContent = Math.round(weatherData.current.apparent_temperature);
   pHumidity.textContent = weatherData.current.relative_humidity_2m;
-  pWind.textContent = `${weatherData.current.wind_speed_10m} ${weatherData.current_units.wind_speed_10m.replace("mp/h", "mph")}`;
-  pPrecipitation.textContent = `${weatherData.current.precipitation} ${weatherData.current_units.precipitation.replace("inch", "in")}`;
+  pWind.textContent = `${weatherData.current.wind_speed_10m} ${weatherData.current_units.wind_speed_10m}`;
+  pPrecipitation.textContent = `${weatherData.current.precipitation} ${weatherData.current_units.precipitation}`;
 }
 
 function loadDailyForecast() {
@@ -99,11 +96,11 @@ function loadDailyForecast() {
 
   for (let i = 0; i < 7; i++) {
     let date = new Date(daily.time[i]);
-    let dayOfWeek = new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(date);
+    let dayOfWeek = new Intl.DateTimeFormat("pt-BR", { weekday: "short" }).format(date);
     let dvForecastDay = document.querySelector(`#dvForecastDay${i + 1}`);
     let weatherCodeName = getWeatherCodeName(daily.weather_code[i]);
-    let dailyHigh = Math.round(daily.temperature_2m_max[i]) + "Â°";
-    let dailyLow = Math.round(daily.temperature_2m_min[i]) + "Â°";
+    let dailyHigh = Math.round(daily.temperature_2m_max[i]) + "°";
+    let dailyLow = Math.round(daily.temperature_2m_min[i]) + "°";
 
     while (dvForecastDay.firstChild) {
       dvForecastDay.removeChild(dvForecastDay.firstChild);
@@ -128,7 +125,7 @@ function addDailyElement(tag, className, content, weatherCodeName, parentElement
   }
   if (tag === "img") {
     newElement.setAttribute("src", `assets/images/icon-${weatherCodeName}.webp`);
-    newElement.setAttribute("alt", weatherCodeName);
+    newElement.setAttribute("alt", getWeatherDescription(weatherCodeName));
     newElement.setAttribute("width", "320");
     newElement.setAttribute("height", "320");
   }
@@ -144,7 +141,7 @@ function addHourlyElement(tag, className, content, weatherCodeName, parentElemen
   }
   if (tag === "img") {
     newElement.setAttribute("src", `assets/images/icon-${weatherCodeName}.webp`);
-    newElement.setAttribute("alt", weatherCodeName);
+    newElement.setAttribute("alt", getWeatherDescription(weatherCodeName));
     newElement.setAttribute("width", "320");
     newElement.setAttribute("height", "320");
   }
@@ -166,8 +163,8 @@ function loadHourlyForecast() {
   for (let h = firstHour; h <= lastHour; h++) {
     // console.log(`hour = ${h}`);
     let weatherCodeName = getWeatherCodeName(weatherCodes[h]);
-    let temp = Math.round(temps[h]) + "Â°";
-    let hour = new Date(hours[h]).toLocaleString("en-US", { hour: "numeric", hour12: true });
+    let temp = Math.round(temps[h]) + "°";
+    let hour = new Date(hours[h]).toLocaleString("pt-BR", { hour: "2-digit", minute: "2-digit" });
     let dvForecastHour = document.querySelector(`#dvForecastHour${id}`);
 
     while (dvForecastHour.firstChild) {
@@ -226,12 +223,28 @@ function getWeatherCodeName(code) {
   return weatherCodes[code];
 }
 
+// descrição em português de cada tipo de tempo (usada no texto alternativo das imagens)
+function getWeatherDescription(weatherCodeName) {
+  const descriptions = {
+    sunny: "Ensolarado",
+    "partly-cloudy": "Parcialmente nublado",
+    overcast: "Nublado",
+    fog: "Neblina",
+    drizzle: "Garoa",
+    rain: "Chuva",
+    snow: "Neve",
+    storm: "Tempestade",
+  };
+
+  return descriptions[weatherCodeName];
+}
+
 function populateDayOfWeek() {
   let currDate = new Date();
   let currDay;
 
   for (i = 0; i < 7; i++) {
-    currDay = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(currDate);
+    currDay = new Intl.DateTimeFormat("pt-BR", { weekday: "long" }).format(currDate);
     const newOption = document.createElement("option");
     const dayOfWeek = document.createTextNode(currDay);
 
@@ -251,5 +264,4 @@ populateDayOfWeek();
 getGeoData();
 
 btnSearch.addEventListener("click", getGeoData);
-ddlUnits.addEventListener("change", getGeoData);
 ddlDay.addEventListener("change", loadHourlyForecast);
