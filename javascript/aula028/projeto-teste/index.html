@@ -1,165 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- exibe o site corretamente de acordo com o dispositivo do usuário -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-
-  <title>Frontend Mentor | App de previsão do tempo</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <a href="#main" class="visually-hidden skip-link">Pular para o conteúdo principal</a>
+    <header>
+        <h1>Como está o céu hoje?</h1>
 
-  <main id="main" class="main wrapper">
-
-    <section class="hero">
-      <div class="hero__content">
-        <h1 class="hero__title">Como está o céu hoje?</h1>
-
-        <div class="hero__search">
-          <input class="hero__textbox" type="text" name="search" id="txtSearch" placeholder="Buscar um local...">
-          <button id="btnSearch" class="hero__button" type="submit">Buscar</button>
+        <div id="busca">
+            <input type="text" id="txtBusca" placeholder="Buscar um local...">
+            <button id="btnBuscar">Buscar</button>
         </div>
-      </div>
+    </header>
 
-    </section>
+    <main id="painel">
+        <!-- Tempo atual -->
+        <section id="atual">
+            <div id="cartao-atual">
+                <div id="local">
+                    <div id="cidade">Porto Alegre, BR</div>
+                    <div id="data">terça-feira, 5 de ago. de 2025</div>
+                </div>
+                <div id="info-atual">
+                    <img id="icone-atual" src="assets/images/icon-sunny.webp" alt="" width="320" height="320">
+                    <div id="temperatura-atual"><span id="temperatura">20</span>&deg;</div>
+                </div>
+            </div>
 
-    <div class="dashboard">
-      <section class="current">
-        <h2 class="visually-hidden">Temperatura do local atual</h2>
+            <div id="condicoes">
+                <div class="bloco condicao">
+                    <p class="condicao-titulo">Sensação térmica</p>
+                    <p class="condicao-valor"><span id="sensacao"></span>&deg;</p>
+                </div>
+                <div class="bloco condicao">
+                    <p class="condicao-titulo">Umidade</p>
+                    <p class="condicao-valor"><span id="umidade"></span>%</p>
+                </div>
+                <div class="bloco condicao">
+                    <p class="condicao-titulo">Vento</p>
+                    <p class="condicao-valor" id="vento"></p>
+                </div>
+                <div class="bloco condicao">
+                    <p class="condicao-titulo">Precipitação</p>
+                    <p class="condicao-valor" id="precipitacao"></p>
+                </div>
+            </div>
+        </section>
 
-        <div class="current__weather">
-          <div class="current__location">
-            <div id="dvCityCountry" class="current__city">Porto Alegre, BR</div>
-            <div id="dvCurrDate" class="current__date">terça-feira, 5 de ago. de 2025</div>
-          </div>
-          <div class="current__info">
-            <img class="current__icon" src="assets/images/icon-sunny.webp" alt="" width="320" height="320">
-            <div class="current__temp"><span id="dvCurrTemp">20</span>&deg;</div>
-          </div>
-        </div>
+        <!-- Previsão para os próximos 7 dias (os dias são criados pelo script) -->
+        <section id="diaria">
+            <h2 class="titulo-secao">Previsão diária</h2>
+            <div id="dias"></div>
+        </section>
 
-        <div class="current__conditions">
-          <div class="block current__condition">
-            <p class="current__condition-title">Sensação térmica</p>
-            <p class="current__condition-value"><span id="pFeelsLike"></span>&deg;</p>
-          </div>
-          <div class="block current__condition">
-            <p class="current__condition-title">Umidade</p>
-            <p class="current__condition-value"><span id="pHumidity"></span>%</p>
-          </div>
-          <div class="block current__condition">
-            <p class="current__condition-title">Vento</p>
-            <p id="pWind" class="current__condition-value"></p>
-          </div>
-          <div class="block current__condition">
-            <p class="current__condition-title">Precipitação</p>
-            <p id="pPrecipitation" class="current__condition-value"></p>
-          </div>
-        </div>
+        <!-- Previsão de cada hora do dia escolhido (as horas são criadas pelo script) -->
+        <section id="por-hora">
+            <div id="por-hora-conteudo">
+                <div id="por-hora-topo">
+                    <h2 class="titulo-secao">Previsão por hora</h2>
+                    <select id="selDia"></select>
+                </div>
+                <div id="horas"></div>
+            </div>
+        </section>
+    </main>
 
-      </section>
-
-      <section class="daily">
-        <h2 class="section__title daily__title">Previsão diária</h2>
-        <div class="daily__forecast">
-          <div id="dvForecastDay1" class="block daily__day"></div>
-          <div id="dvForecastDay2" class="block daily__day"></div>
-          <div id="dvForecastDay3" class="block daily__day"></div>
-          <div id="dvForecastDay4" class="block daily__day"></div>
-          <div id="dvForecastDay5" class="block daily__day"></div>
-          <div id="dvForecastDay6" class="block daily__day"></div>
-          <div id="dvForecastDay7" class="block daily__day"></div>
-        </div>
-      </section>
-
-      <section class="hourly">
-
-        <div class="hourly__content">
-          <div class="hourly__header">
-            <h2 class="section__title hourly__title">Previsão por hora</h2>
-            <select class="dropdown hourly__select" name="hourly__select" id="ddlDay"></select>
-          </div>
-
-          <div class="hourly__hours">
-            <div id="dvForecastHour1" class="hourly__hour"></div>
-            <div id="dvForecastHour2" class="hourly__hour"></div>
-            <div id="dvForecastHour3" class="hourly__hour"></div>
-            <div id="dvForecastHour4" class="hourly__hour"></div>
-            <div id="dvForecastHour5" class="hourly__hour"></div>
-            <div id="dvForecastHour6" class="hourly__hour"></div>
-            <div id="dvForecastHour7" class="hourly__hour"></div>
-            <div id="dvForecastHour8" class="hourly__hour"></div>
-            <div id="dvForecastHour9" class="hourly__hour"></div>
-            <div id="dvForecastHour10" class="hourly__hour"></div>
-            <div id="dvForecastHour11" class="hourly__hour"></div>
-            <div id="dvForecastHour12" class="hourly__hour"></div>
-            <div id="dvForecastHour13" class="hourly__hour"></div>
-            <div id="dvForecastHour14" class="hourly__hour"></div>
-            <div id="dvForecastHour15" class="hourly__hour"></div>
-            <div id="dvForecastHour16" class="hourly__hour"></div>
-            <div id="dvForecastHour17" class="hourly__hour"></div>
-            <div id="dvForecastHour18" class="hourly__hour"></div>
-            <div id="dvForecastHour19" class="hourly__hour"></div>
-            <div id="dvForecastHour20" class="hourly__hour"></div>
-            <div id="dvForecastHour21" class="hourly__hour"></div>
-            <div id="dvForecastHour22" class="hourly__hour"></div>
-            <div id="dvForecastHour23" class="hourly__hour"></div>
-            <div id="dvForecastHour24" class="hourly__hour"></div>
-          </div>
-        </div>
-
-
-      </section>
-    </div>
-
-
-  </main>
-
-  <!-- Unidades
-
-  Alternar para Imperial/Métrico
-
-  Temperatura
-
-  Celsius (°C)
-  Fahrenheit (°F)
-
-  Velocidade do vento
-
-  km/h
-  mph
-
-  Precipitação
-
-  Milímetros (mm)
-  Polegadas (in)
-
-  
-
-  Buscar uma cidade, ex.: Nova York
-  Buscar
-
-  Sensação térmica
-
-  Umidade
-
-  Vento
-  
-  Precipitação
-
-  Previsão diária
-
-  Previsão por hora
-  Inserir aqui a previsão por hora do dia selecionado -->
-
+    <script src="script.js"></script>
 </body>
-
 </html>

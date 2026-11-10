@@ -1,480 +1,403 @@
-@layer global {
-  /* dm-sans-300 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: "DM Sans";
-    font-style: normal;
+@charset "UTF-8";
+
+/* Fontes que estão na pasta assets/fonts */
+/* .woff2 é um formato de fonte compactado para a web, igual ao .ttf/.otf, só que menor */
+/* font-display: swap mostra o texto com a fonte reserva até a fonte carregar */
+@font-face {
+    font-family: 'DM Sans';
     font-weight: 300;
-    src: url("assets/fonts/dm-sans-v16-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    font-display: swap;
+    src: url('assets/fonts/dm-sans-v16-latin-300.woff2') format('woff2');
+}
 
-  /* dm-sans-500 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: "DM Sans";
-    font-style: normal;
+@font-face {
+    font-family: 'DM Sans';
     font-weight: 500;
-    src: url("assets/fonts/dm-sans-v16-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    font-display: swap;
+    src: url('assets/fonts/dm-sans-v16-latin-500.woff2') format('woff2');
+}
 
-  /* dm-sans-600 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: "DM Sans";
-    font-style: normal;
+@font-face {
+    font-family: 'DM Sans';
     font-weight: 600;
-    src: url("assets/fonts/dm-sans-v16-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    font-display: swap;
+    src: url('assets/fonts/dm-sans-v16-latin-600.woff2') format('woff2');
+}
 
-  /* dm-sans-600italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: "DM Sans";
+@font-face {
+    font-family: 'DM Sans';
     font-style: italic;
     font-weight: 600;
-    src: url("assets/fonts/dm-sans-v16-latin-600italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    font-display: swap;
+    src: url('assets/fonts/dm-sans-v16-latin-600italic.woff2') format('woff2');
+}
 
-  /* dm-sans-700 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: "DM Sans";
-    font-style: normal;
+@font-face {
+    font-family: 'DM Sans';
     font-weight: 700;
-    src: url("assets/fonts/dm-sans-v16-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    font-display: swap;
+    src: url('assets/fonts/dm-sans-v16-latin-700.woff2') format('woff2');
+}
 
-  /* bricolage-grotesque-700 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: "Bricolage Grotesque";
-    font-style: normal;
+@font-face {
+    font-family: 'Bricolage Grotesque';
     font-weight: 700;
-    src: url("assets/fonts/bricolage-grotesque-v8-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    font-display: swap;
+    src: url('assets/fonts/bricolage-grotesque-v8-latin-700.woff2') format('woff2');
+}
 
-  :root {
-    --c-neutral-900: hsl(243, 96%, 9%);
-    --c-neutral-800: hsl(243, 27%, 20%);
-    --c-neutral-700: hsl(243, 23%, 24%);
-    --c-neutral-600: hsl(243, 23%, 30%);
-    --c-neutral-300: hsl(240, 6%, 70%);
-    --c-neutral-200: hsl(250, 6%, 84%);
-    --c-neutral-0: hsl(0, 0%, 100%);
-    --c-orange-500: hsl(28, 100%, 52%);
-    --c-blue-500: hsl(233, 67%, 56%);
-    --c-blue-700: hsl(248, 70%, 36%);
+/* ===== Geral ===== */
 
-    --color-main-bg: var(--c-neutral-900);
-    --color-text-light: var(--c-neutral-0);
-    --color-text-med-light: var(--c-neutral-200);
-    --color-panel-bg-dark: var(--c-neutral-800);
-    --color-panel-bg-dark-hover: var(--c-neutral-700);
-    --color-panel-bg-med: var(--c-neutral-700);
-    --color-panel-bg-light: var(--c-neutral-600);
-    --color-panel-border: var(--c-neutral-600);
-    --color-button-bg: var(--c-blue-500);
-    --color-button-bg-hover: var(--c-blue-700);
-
-    --fs-96: calc(96 / 16 * 1rem);
-    --fs-52: calc(52 / 16 * 1rem);
-    --fs-32: calc(32 / 16 * 1rem);
-    --fs-28: calc(28 / 16 * 1rem);
-    --fs-20: calc(20 / 16 * 1rem);
-    --fs-18: calc(18 / 16 * 1rem);
-    --fs-16: calc(16 / 16 * 1rem);
-    --fs-14: calc(14 / 16 * 1rem);
-
-    --font-size-h1: var(--fs-52);
-    --font-size-dropdown: var(--fs-14);
-    --font-size-search: var(--fs-20);
-    --font-size-city: var(--fs-28);
-    --font-size-date: var(--fs-18);
-    --font-size-temp: var(--fs-96);
-    --font-size-panel-title: var(--fs-18);
-    --font-size-panel-value: var(--fs-32);
-    --font-size-forecast-title: var(--fs-20);
-    --font-size-forecast-day: var(--fs-18);
-    --font-size-forecast-temp: var(--fs-16);
-    --font-size-forecast-dropdown: var(--fs-16);
-    --font-size-forecast-hour: var(--fs-20);
-
-    @media (width >= calc(700 / 16 * 1rem)) {
-      --font-size-dropdown: var(--fs-16);
-    }
-  }
-
-  *,
-  *::before,
-  *::after {
+* {
     box-sizing: border-box;
-  }
-
-  * {
     margin: 0;
-  }
+}
 
-  img {
-    max-width: 100%;
-  }
-
-  body {
-    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+body {
+    background-color: rgb(3, 1, 45);
+    color: white;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
     font-weight: 500;
-    background-color: var(--color-main-bg);
-    color: var(--color-text-light);
     line-height: 1.2;
-    padding-block-end: 80px;
-  }
+    padding-bottom: 80px;
+}
 
-  h1 {
-    font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
-  }
+img {
+    max-width: 100%;
+}
 
-  input,
-  button,
-  textarea,
-  select {
+input, button, select {
     font: inherit;
     width: 100%;
     border: none;
-  }
-
-  .wrapper {
-    display: grid;
-    grid-template-columns: 1fr calc(100% - 32px) 1fr;
-
-    @media (width >= calc(700 / 16 * 1rem)) {
-      grid-template-columns: 1fr min(calc(100% - 48px), calc(1216 / 16 * 1rem)) 1fr;
-    }
-
-    > * {
-      grid-column: 2;
-    }
-  }
-
-  .visually-hidden {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-
-    &.skip-link:focus {
-      left: 0;
-      width: auto;
-      height: auto;
-      background-color: var(--color-main-bg);
-      color: var(--color-text-light);
-      padding: 10px;
-      border: 2px solid var(--color-text-light);
-    }
-  }
-
-  .main {
-    display: grid;
-    row-gap: 32px;
-  }
-
-  .dashboard {
-    display: grid;
-    gap: 32px;
-    grid-template-areas:
-      "current"
-      "daily"
-      "hourly";
-
-    @media (width >= calc(1000 / 16 * 1rem)) {
-      gap: 48px 32px;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        "current current hourly"
-        "daily daily hourly";
-    }
-  }
-
-  .dropdown {
-    background-color: var(--color-panel-bg-dark);
-    color: var(--color-text-light);
-    border: 0;
-    font-size: var(--font-size-dropdown);
-    border-radius: 8px;
-  }
-
-  .block {
-    background-color: var(--color-panel-bg-dark);
-    border: 1px solid var(--color-panel-border);
-    border-radius: 12px;
-  }
 }
 
-@layer component {
-  .hero {
-    .hero__content {
-      display: grid;
-      justify-items: center;
-      padding-block-start: 48px;
+/* Cabeçalho e painel ocupam a mesma largura, centralizados */
+header, main {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+}
+
+/* Bloco escuro com borda (condições e dias) */
+.bloco {
+    background-color: rgb(39, 37, 65);
+    border: 1px solid rgb(61, 59, 94);
+    border-radius: 12px;
+}
+
+.titulo-secao {
+    font-size: 20px;
+}
+
+/* ===== Cabeçalho com a busca ===== */
+
+header {
+    display: grid;
+    justify-items: center;
+    padding-top: 48px;
+    margin-bottom: 32px;
+}
+
+h1 {
+    font-family: 'Bricolage Grotesque', Arial, Helvetica, sans-serif;
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 520px;
+}
+
+#busca {
+    display: grid;
+    gap: 12px 16px;
+    width: 100%;
+    max-width: 656px;
+}
+
+#txtBusca {
+    background: rgb(39, 37, 65) url('assets/images/icon-search.svg') no-repeat 24px center;
+    color: rgb(213, 212, 217);
+    font-size: 20px;
+    padding: 16px 20px 16px 60px;
+    border-radius: 12px;
+}
+
+#txtBusca:focus {
+    outline: 2px solid rgb(213, 212, 217);
+}
+
+#btnBuscar {
+    background-color: rgb(68, 85, 218);
+    color: white;
+    font-size: 20px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    transition: background-color 120ms ease-in-out;
+}
+
+#btnBuscar:hover {
+    background-color: rgb(45, 28, 156);
+    cursor: pointer;
+}
+
+/* ===== Painel: no celular as seções ficam uma embaixo da outra ===== */
+
+#painel {
+    display: grid;
+    gap: 32px;
+    /* grid-template-areas dá um nome para cada área do grid, como um desenho do layout */
+    /* cada linha entre aspas é uma linha do grid e cada nome ocupa uma célula */
+    grid-template-areas:
+        'atual'
+        'diaria'
+        'por-hora';
+}
+
+/* ===== Tempo atual ===== */
+
+#atual {
+    /* grid-area: atual coloca o elemento na área chamada 'atual', */
+    /* semelhante a usar grid-area: 1 / 1 / 2 / -1, mas pelo nome em vez dos números */
+    grid-area: atual;
+}
+
+#cartao-atual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 40px 24px;
+    background: rgb(45, 28, 156) url('assets/images/bg-today-small.svg') no-repeat center bottom;
+    background-size: cover;
+    border-radius: 20px;
+    /* overflow: clip corta o que passar da borda, semelhante ao overflow: hidden */
+    overflow: clip;
+}
+
+#local {
+    text-align: center;
+}
+
+#cidade {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+#data {
+    font-size: 18px;
+    color: rgb(213, 212, 217);
+}
+
+#info-atual {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#icone-atual {
+    width: 120px;
+    height: auto;
+}
+
+#temperatura-atual {
+    font-size: 96px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: -2%;
+}
+
+#condicoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.condicao {
+    padding: 20px;
+}
+
+.condicao-titulo {
+    font-size: 18px;
+    color: rgb(213, 212, 217);
+    margin-bottom: 24px;
+}
+
+.condicao-valor {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+/* ===== Previsão diária ===== */
+
+#diaria {
+    grid-area: diaria;
+}
+
+#diaria .titulo-secao {
+    margin-bottom: 20px;
+}
+
+#dias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    min-height: 166px;
+}
+
+.dia {
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    padding: 16px 10px;
+    text-align: center;
+}
+
+.dia-nome {
+    font-size: 18px;
+}
+
+.dia-icone {
+    width: 60px;
+    height: auto;
+}
+
+/* Máxima à esquerda e mínima à direita */
+.dia-temps {
+    /* justify-self alinha só este item na horizontal, semelhante ao justify-items, */
+    /* que alinha todos os itens do grid de uma vez */
+    justify-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.dia-min {
+    color: rgb(213, 212, 217);
+}
+
+/* ===== Previsão por hora ===== */
+
+#por-hora {
+    grid-area: por-hora;
+    position: relative;
+}
+
+#por-hora-conteudo {
+    background-color: rgb(39, 37, 65);
+    border-radius: 20px;
+    padding: 20px 16px;
+    max-height: 60vh;
+    /* overflow-y: scroll cria a barra de rolagem só na vertical (o overflow-x faz o mesmo na horizontal) */
+    overflow-y: scroll;
+}
+
+#por-hora-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 16px;
+}
+
+#por-hora .titulo-secao {
+    font-weight: 600;
+}
+
+#selDia {
+    background-color: rgb(49, 47, 75);
+    color: white;
+    font-size: 14px;
+    width: auto;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+#horas {
+    display: grid;
+    gap: 16px;
+}
+
+/* Ícone, hora e temperatura lado a lado */
+.hora {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px 10px 12px;
+    min-height: 60px;
+    background-color: rgb(49, 47, 75);
+    border: 1px solid rgb(61, 59, 94);
+    border-radius: 8px;
+}
+
+.hora-icone {
+    width: 40px;
+    height: auto;
+}
+
+.hora-texto {
+    font-size: 20px;
+}
+
+.hora-temp {
+    font-size: 16px;
+    justify-self: end;
+}
+
+/* ===== Telas a partir de 700px (tablet) ===== */
+
+@media (min-width: 700px) {
+    header, main {
+        /* min() usa o menor dos valores: a largura da tela menos 48px, mas no máximo 1216px */
+        width: min(calc(100% - 48px), 1216px);
     }
 
-    .hero__title {
-      font-size: var(--font-size-h1);
-      margin-block-end: 48px;
-      text-align: center;
-      line-height: 1.2;
-
-      @media (width < calc(1000 / 16 * 1rem)) {
-        max-width: 15ch;
-      }
-    }
-
-    .hero__search {
-      display: grid;
-      gap: 12px 16px;
-      width: 100%;
-      max-width: calc(656 / 16 * 1rem);
-
-      @media (width >= calc(700 / 16 * 1rem)) {
+    #busca {
         grid-template-columns: 1fr auto;
-      }
     }
 
-    .hero__textbox {
-      background-image: url("assets/images/icon-search.svg");
-      background-repeat: no-repeat;
-      background-position: 24px center;
-      background-color: var(--color-panel-bg-dark);
-      font-size: var(--font-size-search);
-      padding: 16px 20px 16px 60px;
-      color: var(--color-text-med-light);
-      border-radius: 12px;
-
-      &:focus {
-        outline: 2px solid var(--color-text-med-light);
-      }
-    }
-
-    .hero__button {
-      background-color: var(--c-blue-500);
-      border-radius: 12px;
-      font-size: var(--font-size-search);
-      color: var(--color-text-light);
-      padding: 16px 24px;
-      transition: background-color 120ms ease-in-out;
-
-      &:hover {
-        background-color: var(--color-button-bg-hover);
-        cursor: pointer;
-      }
-    }
-  }
-
-  .current {
-    grid-area: current;
-
-    .current__weather {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-block-end: 20px;
-      padding: 40px 24px;
-      background-image: url("assets/images/bg-today-small.svg");
-      background-repeat: no-repeat;
-      background-color: var(--c-blue-700);
-      background-size: cover;
-      background-position: center bottom;
-      border-radius: 20px;
-      overflow: clip;
-
-      @media (width >= calc(700 / 16 * 1rem)) {
+    #cartao-atual {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-image: url("assets/images/bg-today-large.svg");
-        padding-block: 83px;
-      }
+        background-image: url('assets/images/bg-today-large.svg');
+        padding-top: 83px;
+        padding-bottom: 83px;
     }
 
-    .current__location {
-      text-align: center;
-    }
-
-    .current__city {
-      font-size: var(--font-size-city);
-      font-weight: 700;
-      margin-block-end: 12px;
-    }
-
-    .current__date {
-      font-size: var(--font-size-date);
-      color: var(--color-text-med-light);
-    }
-
-    .current__info {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .current__icon {
-      width: 120px;
-      height: auto;
-    }
-
-    .current__temp {
-      font-size: var(--font-size-temp);
-      line-height: 1;
-      letter-spacing: -2%;
-      font-weight: 600;
-      font-style: italic;
-    }
-
-    .current__conditions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-
-      @media (width >= calc(700 / 16 * 1rem)) {
+    #condicoes {
         grid-template-columns: repeat(4, 1fr);
-      }
     }
 
-    .current__condition {
-      padding: 20px;
-    }
-
-    .current__condition-title {
-      font-size: var(--font-size-panel-title);
-      color: var(--color-text-med-light);
-      margin-block-end: 24px;
-    }
-
-    .current__condition-value {
-      font-size: var(--font-size-panel-value);
-      font-weight: 300;
-    }
-  }
-
-  .daily {
-    grid-area: daily;
-
-    .daily__title {
-      font-size: var(--font-size-forecast-title);
-      margin-block-end: 20px;
-    }
-
-    .daily__forecast {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      min-height: calc(166 / 16 * 1rem);
-
-      @media (width >= calc(700 / 16 * 1rem)) {
+    #dias {
         grid-template-columns: repeat(7, 1fr);
-      }
     }
 
-    .daily__day {
-      display: grid;
-      justify-items: center;
-      gap: 16px;
-      padding: 16px 10px;
-      text-align: center;
+    #selDia {
+        font-size: 16px;
+    }
+}
+
+/* ===== Telas a partir de 1000px (computador) ===== */
+
+@media (min-width: 1000px) {
+    h1 {
+        max-width: none;
     }
 
-    .daily__day-title {
-      font-size: var(--font-size-forecast-day);
+    /* Tempo atual e diária à esquerda, previsão por hora à direita */
+    #painel {
+        gap: 48px 32px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            'atual atual por-hora'
+            'diaria diaria por-hora';
     }
 
-    .daily__day-icon {
-      width: 60px;
-      height: auto;
-    }
-
-    .daily__day-temps {
-      justify-self: stretch;
-      display: flex;
-      justify-content: space-between;
-      font-size: var(--font-size-forecast-temp);
-    }
-
-    .daily__day-high {
-    }
-
-    .daily__day-low {
-      color: var(--color-text-med-light);
-    }
-  }
-
-  .hourly {
-    grid-area: hourly;
-    position: relative;
-
-    .hourly__content {
-      background-color: var(--color-panel-bg-dark);
-      border-radius: 20px;
-      padding: 20px 16px;
-      max-height: 60vh;
-      overflow-y: scroll;
-
-      @media (width >= calc(1000 / 16 * 1rem)) {
+    #por-hora-conteudo {
         position: absolute;
         height: 100%;
         max-height: none;
-      }
     }
-
-    .hourly__header {
-      display: flex;
-      gap: 40px;
-      justify-content: space-between;
-      align-items: center;
-      margin-block-end: 16px;
-    }
-
-    .hourly__title {
-      font-size: var(--font-size-forecast-title);
-      font-weight: 600;
-    }
-
-    .hourly__select {
-      background-color: var(--color-panel-bg-med);
-      width: auto;
-      padding: 8px 16px;
-    }
-
-    .hourly__select-day {
-    }
-
-    .hourly__hours {
-      display: grid;
-      gap: 16px;
-    }
-
-    .hourly__hour {
-      display: grid;
-      grid-template-columns: auto auto 1fr;
-      gap: 8px;
-      align-items: center;
-      padding: 10px 16px 10px 12px;
-      background-color: var(--color-panel-bg-med);
-      border: 1px solid var(--color-panel-border);
-      border-radius: 8px;
-      min-height: calc(60 / 16 * 1rem);
-    }
-
-    .hourly__hour-icon {
-      width: 40px;
-      height: auto;
-    }
-
-    .hourly__hour-time {
-      font-size: var(--font-size-forecast-hour);
-    }
-
-    .hourly__hour-temp {
-      font-size: var(--font-size-forecast-temp);
-      justify-self: end;
-    }
-  }
 }
